@@ -122,33 +122,53 @@ Além disso, foi gerado gráficos da distribuição de cada métrica para cada f
 Para compor melhor o estudo do classificador, foi feita uma análise das palavras mais importantes para a classificação. Através do coeficiente da regressão logística, foi possível identificar as palavras que mais influenciam na classificação do modelo. A seguir, são apresentadas as palavras mais importantes para cada classe com seus respectivos pesos.
 
 - Palavras que mais contribuem positivamente para a classe alvo:
+
 > bird: 5.8814
+
 > trash: 5.6385
+
 > yankee: 4.9584
+
 > charlie: 4.4743
+
 > yellow: 4.2395
+
 > oreo: 3.2637
+
 > brownie: 3.1533
+
 > monkey: 2.6483
+
 > mock: 2.5598
+
 > colored: 2.4811
 
 - Palavras que mais contribuem negativamente (associadas à classe oposta):
+
 > b-tch: -20.3141
+
 > h-e: -11.0728
+
 > p-ssy: -9.5015
+
 > s-it: -5.6626
+
 > f-ggot: -5.4129
+
 > as: -5.0832
+
 > n-gga: -4.9130
+
 > f-ck: -4.8490
+
 > f-g: -4.4652
+
 > n-gger: -4.3939
 
 Do ponto de vista da classe hate/offensive, faz sentido as palavras que contribuem negativamente para a classificação devido ao seu caráter claramente ofensivo. Por outro lado, as palavras que contribuem positivamente para a classificação da classe neutra são um pouco mais difíceis de interpretar. A presença de palavras como "bird", "trash" e "yellow" pode ser um indicativo de que o modelo está associando essas palavras a contextos neutros, mas é difícil inferir uma interpretação precisa sem mais contexto.
 
 
-## Modificando o tamanho do dataset
+## 4. Modificando o tamanho do dataset
 
 Vamos variar o tamanho do dataset gradativamente para enxergar o comportamento dos gráficos e das métricas de avaliação.
 
@@ -160,17 +180,9 @@ A partir da análise do gráfico de **Erro vs. Tamanho do Dataset**, que avalia 
 
 
 
+## 5. Modelagem de Tópicos
 
-
-
-
-
-
-
-
-
-
-
+Ao utilizar a modelagem de tópicos sobre o classificador, foi possível observar que para alguns tópicos, o modelo apresentou um desempenho melhor do que para outros. Isso levanta a questão de como a modelagem de tópicos pode ser usada para melhorar a performance do classificador, com a criação de modelos específicos para diferentes tópicos. 
 
 
 ### Conclusão
