@@ -26,6 +26,7 @@ Para o pré-processamento dos textos, foram utilizadas as seguintes técnicas:
 Dessa forma, a implementação você pode acompanhar abaixo:
 
 ```python
+
 class PreproTweets(BaseEstimator, TransformerMixin):
     def __init__(self):
         pass
@@ -184,10 +185,12 @@ A partir da análise do gráfico de **Erro vs. Tamanho do Dataset**, que avalia 
 
 Ao utilizar a modelagem de tópicos sobre o classificador, foi possível observar que para alguns tópicos, o modelo apresentou um desempenho melhor do que para outros. Isso levanta a questão de como a modelagem de tópicos pode ser usada para melhorar a performance do classificador, com a criação de modelos específicos para diferentes tópicos. 
 
+### Conclusão - Two Layer Classifier
 
-### Conclusão
+É possível notar que a performace do modelo quando ele é desenvolvido em duas camadas é melhor do que o modelo único. Isso se dá pelo fato de que o modelo consegue aprender melhor as características de cada tópico e classificar de forma mais precisa. A especificidade do modelo é um fator importante para a classificação de textos, pois permite que instâncias mais complexas de textos sejam tratadas de maneira mais específica e eficiente. 
 
-Este projeto busca fornecer uma visão completa sobre como pipelines de classificação de texto funcionam e como podem ser otimizados utilizando análises detalhadas e modelagem de tópicos. Para maiores informações sobre o caso de uso do dataset, consulte as referências no relatório.
+Nesse sentido, é de suma importância que implementações como a análise de tópicos para a construção de modelos de classificação de texto nas redes sociais sejam consideradas, pois elas podem melhorar significativamente a performance do modelo e a qualidade das previsões, melhorando assim a experiência do usuário e a segurança online.
+
 
 ## Reference
 
