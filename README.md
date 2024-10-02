@@ -1,21 +1,21 @@
-## Classificação de Texto no Dataset ``Hate Speech and Offensive Language Dataset``
+# Classificação de Texto no Dataset ``Hate Speech and Offensive Language Dataset``
 
 Este projeto tem como objetivo construir, analisar e melhorar uma pipeline de classificação de textos utilizando um dataset de classificação previamente rotulado. Através de métodos de processamento de linguagem natural (NLP), análises de erros e modelagem de tópicos, foi buscado entender o desempenho do modelo e identificar formas de aprimorá-lo.
 
-### 1. Obter o Dataset
+## 1. Obter o Dataset
 
 O dataset ``Hate Speech and Offensive Language Dataset`` utilizado para a classificação de texto pode ser baixado do **Kaggle**, o link você pode encontrar clicando [aqui](https://www.kaggle.com/datasets/mrmorj/hate-speech-and-offensive-language-dataset?resource=download), assim como o paper original da aplicação você pode encontrar [aqui](https://arxiv.org/pdf/1703.04009).
 
-#### Aplicação
+### Aplicação
 
 Um desafio inerente ao contexto de redes sociais é a classificação automática de instâncias de textos tóxicos, tais como o discurso de ódio e a linguagem ofensiva. Nesse sentido, a classificação automática se torna uma tarefa fundamental para a identificação de conteúdo nocivo e a proteção de usuários vulneráveis. Neste projeto, utilizamos um dataset de classificação de texto para treinar um modelo de classificação de texto capaz de identificar automaticamente conteúdo tóxico em redes sociais com base em tweets.
 
 
-### 2. Pipeline de classificação
+## 2. Pipeline de classificação
 
 A pipeline completa foi dividida em duas etapas: ``prepro_features`` e  ``pipeline``. A primeira etapa é responsável por realizar o pré-processamento dos dados, enquanto a segunda etapa é responsável por treinar o modelo de classificação e avaliar seu desempenho. O pré-processamento inclui as seguintes etapas:
 
-#### Pré-processamento de Texto
+### Pré-processamento de Texto
 
 Para o pré-processamento dos textos, foram utilizadas as seguintes técnicas:
 
@@ -52,11 +52,11 @@ pipeline_prepro_features = Pipeline([
 
 ``` 
 
-#### Junção de classes
+### Junção de classes
 
 Devido a complexidade envolvida em classificar **hate speech e neither**, vamos considerar a classificação de offensive language e todo o resto, dessa forma transformando o problema numa classificação binária. O intuito dessa abordagem é simplificar o problema e tornar o modelo mais eficiente.
 
-#### Equilibrando datasets
+### Equilibrando datasets
 
 Além disso, vamos também equilibrar os datasets para que o modelo não seja enviesado para uma classe específica. Para isso, vamos utilizar a técnica de **undersampling**, na qual vamos reduzir a quantidade de amostras da classe majoritária para que ela fique balanceada com a classe minoritária.
 
@@ -68,7 +68,7 @@ texts_target_undersampled = pd.concat([texts_target[texts_target['class'] == 0].
 ```
 
 
-#### Pipeline de Classificação
+### Pipeline de Classificação
 
 Para a classificação dos textos, foram utilizados os seguintes modelos:
 
@@ -88,7 +88,7 @@ pipeline = Pipeline([
 
 ```
 
-#### Classificador com "dúvida"
+### Classificador com "dúvida"
 
 Após treinar de forma preliminar o modelo, foi identificado que o modelo estava tendo dificuldades em classificar corretamente algumas instâncias. Para explorar inicialmente, foi criada uma lista com a entropia de cada instância, ou seja, a incerteza do modelo em classificar a instância. A partir disso, foi possível identificar instâncias que o modelo estava tendo dificuldades em classificar. Alguns casos foram trazidos aqui para análise.
 
@@ -108,7 +108,7 @@ A linguagem usada é agressiva, mas pode estar sendo usada de maneira casual ou 
 
 
 
-### 3. Avaliando modelo
+## 3. Avaliando modelo
 
 Para garantir uma avaliação robusta do modelo, foi utilizada a **validação cruzada com K-Folds**, onde o conjunto de dados é dividido em 100 subconjuntos ou "folds". A cada iteração, o modelo é treinado em 99 desses folds e testado no fold restante, repetindo esse processo até que todos os folds sejam utilizados como conjunto de teste exatamente uma vez. O uso de 100 folds ajuda a reduzir a variabilidade associada à partição do conjunto de dados e oferece uma estimativa mais estável das métricas de desempenho. As principais métricas de avaliação incluídas são **F1-Score, acurácia, precisão e revocação**, cujas médias e desvios-padrão são calculados ao longo de todas as iterações para fornecer uma visão mais clara da performance do modelo.
 
@@ -118,7 +118,7 @@ Além disso, foi gerado gráficos da distribuição de cada métrica para cada f
 <img src="./imgs/metrics_violinplot.png" width="500" >
 </center>
 
-#### Palavras mais importantes
+### Palavras mais importantes
 
 Para compor melhor o estudo do classificador, foi feita uma análise das palavras mais importantes para a classificação. Através do coeficiente da regressão logística, foi possível identificar as palavras que mais influenciam na classificação do modelo. A seguir, são apresentadas as palavras mais importantes para cada classe com seus respectivos pesos.
 
@@ -185,7 +185,7 @@ A partir da análise do gráfico de **Erro vs. Tamanho do Dataset**, que avalia 
 
 Ao utilizar a modelagem de tópicos sobre o classificador, foi possível observar que para alguns tópicos, o modelo apresentou um desempenho melhor do que para outros. Isso levanta a questão de como a modelagem de tópicos pode ser usada para melhorar a performance do classificador, com a criação de modelos específicos para diferentes tópicos. 
 
-### Conclusão - Two Layer Classifier
+## Conclusão - Two Layer Classifier
 
 É possível notar que a performace do modelo quando ele é desenvolvido em duas camadas é melhor do que o modelo único. Isso se dá pelo fato de que o modelo consegue aprender melhor as características de cada tópico e classificar de forma mais precisa. A especificidade do modelo é um fator importante para a classificação de textos, pois permite que instâncias mais complexas de textos sejam tratadas de maneira mais específica e eficiente. 
 
