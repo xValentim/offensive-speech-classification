@@ -177,7 +177,14 @@ Vamos variar o tamanho do dataset gradativamente para enxergar o comportamento d
 <img src="./imgs/erro_dataset_size.png" width="500" >
 </center>
 
-A partir da análise do gráfico de **Erro vs. Tamanho do Dataset**, que avalia o desempenho do modelo em diferentes proporções do conjunto de dados de treinamento, é possível observar que tanto o erro de treinamento quanto o erro de teste diminuem conforme o tamanho do dataset aumenta. No entanto, à medida que mais dados são incluídos, o ganho de precisão começa a diminuir. Isso sugere que, embora haja espaço para melhorar a acurácia do modelo com o aumento do tamanho do dataset, os retornos em termos de redução do erro se tornam cada vez menores, especialmente ao nos aproximarmos do uso completo do dataset. Portanto, a adição de mais dados pode continuar a melhorar a performance, mas é necessário ponderar se os custos e o tempo de coleta de mais dados são viáveis no contexto do caso de negócio. No contexto presente, como o insumo de treino é oriundo das redes sociais, o trabalho pode ser facilitado com acesso às APIs das redes sociais, que podem fornecer um volume maior de dados para treinamento.
+A partir da análise do gráfico de **Erro vs. Tamanho do Dataset**, que avalia o desempenho do modelo em diferentes proporções do conjunto de dados de treinamento, é possível observar que tanto o erro de treinamento quanto o erro de teste diminuem conforme o tamanho do dataset aumenta. No entanto, à medida que mais dados são incluídos, o ganho de precisão começa a diminuir. Isso sugere que, embora haja espaço para melhorar a acurácia do modelo com o aumento do tamanho do dataset, os retornos em termos de redução do erro se tornam cada vez menores, especialmente ao nos aproximarmos do uso completo do dataset. 
+
+<center>
+<img src="./imgs/regression.png" width="500" >
+</center>
+
+
+Portanto, a adição de mais dados pode continuar a melhorar a performance, mas é necessário ponderar se os custos e o tempo de coleta de mais dados são viáveis no contexto do caso de negócio. No contexto presente, como o insumo de treino é oriundo das redes sociais, o trabalho pode ser facilitado com acesso às APIs das redes sociais, que podem fornecer um volume maior de dados para treinamento.
 
 ## 5. Modelagem de Tópicos
 
@@ -192,10 +199,10 @@ Nesse sentido, é de suma importância que implementações como a análise de t
 
 ## Reference
 
-- Link: https://www.kaggle.com/datasets/mrmorj/hate-speech-and-offensive-language-dataset?resource=download
+[1] T. Davidson, D. Warmsley, M. Macy, and I. Weber, `Automated hate speech detection and the problem of offensive language,'' in *Proceedings of the International Conference on Web and Social Media (ICWSM)*, 2017, pp. 1--11.
 
-- Paper: https://arxiv.org/pdf/1703.04009
+[2] J. S. Cramer, `The origins of logistic regression,'' Tinbergen Institute Working Paper, no. 2002-119/4, 16 pages, Dec. 2002.
 
-- Paper: https://www.sciencedirect.com/science/article/pii/S2352340922010356
+[3] D. D. Lee and H. S. Seung, "Algorithms for Non-negative Matrix Factorization," Advances in Neural Information Processing Systems, vol. 13, pp. 556-562, 2001.
 
-- Repositório do autor: https://github.com/t-davidson/hate-speech-and-offensive-language/tree/master
+[4] C. Cortes, L. D. Jackel, S. A. Solla, V. Vapnik, and J. S. Denker, `Learning curves: Asymptotic values and rate of convergence,'' in *Advances in Neural Information Processing Systems (NIPS)*, 1993, pp. 327--334.
