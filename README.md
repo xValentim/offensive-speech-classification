@@ -1,6 +1,6 @@
 # Classificação de Texto no Dataset ``Hate Speech and Offensive Language Dataset``
 
-Este projeto tem como objetivo construir, analisar e melhorar uma pipeline de classificação de textos utilizando um dataset de classificação previamente rotulado. Através de métodos de processamento de linguagem natural (NLP), análises de erros e modelagem de tópicos, foi buscado entender o desempenho do modelo e identificar formas de aprimorá-lo.
+Este projeto tem como objetivo construir, analisar e melhorar uma pipeline de classificação de textos utilizando um dataset de classificação previamente rotulado. Através de métodos de processamento de linguagem natural (NLP), análises de erros e modelagem de tópicos, foi buscado entender o desempenho do modelo e identificar formas de aprimorá-lo. Para iniciar e acompanhar o passo a passo que vamos seguir, acesse o notebook que se encontra em ``notebooks/creating_models.ipynb``.
 
 ## 1. Obter o Dataset
 
@@ -178,8 +178,6 @@ Vamos variar o tamanho do dataset gradativamente para enxergar o comportamento d
 </center>
 
 A partir da análise do gráfico de **Erro vs. Tamanho do Dataset**, que avalia o desempenho do modelo em diferentes proporções do conjunto de dados de treinamento, é possível observar que tanto o erro de treinamento quanto o erro de teste diminuem conforme o tamanho do dataset aumenta. No entanto, à medida que mais dados são incluídos, o ganho de precisão começa a diminuir. Isso sugere que, embora haja espaço para melhorar a acurácia do modelo com o aumento do tamanho do dataset, os retornos em termos de redução do erro se tornam cada vez menores, especialmente ao nos aproximarmos do uso completo do dataset. Portanto, a adição de mais dados pode continuar a melhorar a performance, mas é necessário ponderar se os custos e o tempo de coleta de mais dados são viáveis no contexto do caso de negócio. No contexto presente, como o insumo de treino é oriundo das redes sociais, o trabalho pode ser facilitado com acesso às APIs das redes sociais, que podem fornecer um volume maior de dados para treinamento.
-
-
 
 ## 5. Modelagem de Tópicos
 
