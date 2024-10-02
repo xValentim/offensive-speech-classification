@@ -1,6 +1,6 @@
 # Classificação de Texto no Dataset ``Hate Speech and Offensive Language Dataset``
 
-Este projeto tem como objetivo construir, analisar e melhorar uma pipeline de classificação de textos utilizando um dataset de classificação previamente rotulado. Através de métodos de processamento de linguagem natural (NLP), análises de erros e modelagem de tópicos, foi buscado entender o desempenho do modelo e identificar formas de aprimorá-lo. Para iniciar e acompanhar o passo a passo que vamos seguir, acesse o notebook que se encontra em ``notebooks/creating_models.ipynb``.
+Este projeto tem como objetivo construir, analisar e melhorar uma pipeline de classificação de textos utilizando um dataset de classificação previamente rotulado. Através de métodos de processamento de linguagem natural (NLP), análises de erros e modelagem de tópicos, foi buscado entender o desempenho do modelo e identificar formas de aprimorá-lo. Para iniciar e acompanhar o passo a passo que vamos seguir, acesse o notebook que se encontra em ``notebooks/creating_models.ipynb``. Além disso, para ver em pdf a versão resumida do projeto, acesse o arquivo ``report.pdf``.
 
 ## 1. Obter o Dataset
 
